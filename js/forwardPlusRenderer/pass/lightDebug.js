@@ -10,9 +10,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         var gl = FPR.gl;
 
         lightPositionBuffer = FPR.pass.lightDebug.lightPositionBuffer = gl.createBuffer();
-        // gl.bindBuffer(gl.ARRAY_BUFFER, lightPositionBuffer);
-        // gl.bufferData(gl.ARRAY_BUFFER, lightPositionBuffer, gl.DYNAMIC_DRAW);
-        // gl.bindBuffer(gl.ARRAY_BUFFER, null);
     };
 
 

@@ -7,7 +7,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
     FPR.pass.tileLightDebug.init = function () {
         console.log("tileLightDebug Init");
 
-        // TODO:
     };
     
     FPR.pass.tileLightDebug.loadShaderProgramCallback = function (prog) {

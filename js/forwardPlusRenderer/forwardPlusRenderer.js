@@ -26,13 +26,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         tileLights: 8,
         tileFrustumPlanes: 9
     };
-
-
-
-    // // var curPass = FPR.curPass = FPR.pass.forward;
-    // var modes = ["forward", "depth-debug", "forward+"];
-    // var mode = "depth-debug"; 
-
     
 
     var quadPositions = new Float32Array([
@@ -63,11 +56,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
     var quadPositionBuffer;
     var quadUVBuffer;
 
-
-    // var renderer;
-    // var model;
-    // var scene;
-
     // Use Three.js camera and controls implementation
     // grab
     var camera;
@@ -88,7 +76,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
     // modelMatrix[5] = 0.01;
     // modelMatrix[10] = 0.01;
 
-
     var canvas;
     var width;
     var height;
@@ -106,7 +93,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
     var stats;
 
 
-    
     /**
      * Global init
      */
@@ -150,10 +136,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         gl.enable(gl.CULL_FACE);
         gl.frontFace(gl.CCW);
         gl.cullFace(gl.BACK);
-        
-        // // test alpha blend
-        // gl.enable(gl.BLEND);
-        // gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
 
 
         FPR.shader.init();
@@ -180,8 +162,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         gl.bufferData(gl.ARRAY_BUFFER, quadUVs, gl.STATIC_DRAW);
         gl.bindBuffer(gl.ARRAY_BUFFER, null);
 
-
-
         // Three.js camera and control module init
         // We only borrow its mouse control input and camera transformation matrix
         // We are not using the Three.js scene for rendering
@@ -192,10 +172,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
             near,            // Near plane
             far             // Far plane
         );
-        // camera.position.set(-15.5, 1, -1);
-        // camera.position.set(0, 1, 10);
-        // camera.position.set(0, 0, 10);  // duck
-        // camera.position.set(-7.8, 8, 0);
         camera.position.set(-5, 1, 0);
         projectionMatrix = camera.projectionMatrix.elements;
         viewMatrix = camera.matrixWorldInverse.elements;
@@ -208,7 +184,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         controls.rotateSpeed = 0.3;
         controls.zoomSpeed = 1.0;
         controls.panSpeed = 2.0;
-
 
         // init scene with gltf model
         var url = 'models/gltf-sponza-kai-fix/sponza.gltf';
@@ -242,7 +217,7 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         for (i = 0; i < scene.primitives.length; i++) {
             p = scene.primitives[i];
 
-            // TODO: optimize for only one primitive: bind buffer only once
+            // TODO for TA: optimize for only one primitive: bind buffer only once
 
             // model matrix for multi hierachy glTF
             mat4.multiply(localMV, MV, p.matrix);
@@ -432,7 +407,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         FPR.light.update();
 
         // execute render pipeline
-
         FPR.pipeline[FPR.cfg.curPipeline]();
 
 
@@ -442,15 +416,12 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
 
         FPR.stats.begin();
 
-        //if (!aborted) {
-            requestAnimationFrame(update);
-        //}
+        requestAnimationFrame(update);
     };
 
 
 
     globalInitHandlers.push(FPR.init);
 
-    //globalInitHandlers.push(FPR.render);
     
 })();

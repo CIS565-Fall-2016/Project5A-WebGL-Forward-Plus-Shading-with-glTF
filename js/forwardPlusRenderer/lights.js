@@ -11,24 +11,13 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
     
     var lightPos = FPR.light.lightPos;
 
-    // // for duck
-    // var lightPosMin = [-2, -2, -1.5];
-    // var lightPosMax = [2, 4, 1.5];
-
     // for sponza
     var lightPosMin = [-14, -0.5, -6];
     var lightPosMax = [14, 18, 6];
-    // var lightPosMin = [0, -0.5, -3];
-    // var lightPosMax = [14, 18, 3];
 
-    //var lightVelMax = [0, -1, 0];
     var lightVelY = -0.03;
-    // var LIGHT_RADIUS = 1;
     var LIGHT_RADIUS = 4;
-    // var LIGHT_RADIUS = 10000.0;
-    // var NUM_LIGHTS = FPR.NUM_LIGHTS = 20; // TODO: test with MORE lights!
-    var NUM_LIGHTS = FPR.NUM_LIGHTS = 20;
-
+    var NUM_LIGHTS = FPR.NUM_LIGHTS = 20; // TODO: test with MORE lights!
     
     var lightPosition = FPR.light.position = new Float32Array(NUM_LIGHTS * 3);
     var lightColorRadius = FPR.light.colorRadius = new Float32Array(NUM_LIGHTS * 4);
@@ -53,12 +42,9 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
             lightPosition[b + 1] = posfn(1);
             lightPosition[b + 2] = posfn(2);
 
-            lightColorRadius[t + 0] = Math.random();
-            lightColorRadius[t + 1] = Math.random();
-            lightColorRadius[t + 2] = Math.random();
-            // lightColorRadius[t + 0] = 1 + Math.random();
-            // lightColorRadius[t + 1] = 1 + Math.random();
-            // lightColorRadius[t + 2] = 1 + Math.random();
+            lightColorRadius[t + 0] = 1 + Math.random();
+            lightColorRadius[t + 1] = 1 + Math.random();
+            lightColorRadius[t + 2] = 1 + Math.random();
 
             // radius
             lightColorRadius[t + 3] = LIGHT_RADIUS;
@@ -67,10 +53,9 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
 
         var gl = FPR.gl;
 
-        //var lightUniformBuffer = FPR.lightUniformBuffer = gl.createBuffer();
         if (FPR.useWebGL2) {
             // WebGL 2
-            // TODO: use uniform buffer to store lights 
+            // TODO for TA: use uniform buffer to store lights 
         } else {
             // WebGL 1
             // use Texture to store lights info
@@ -110,8 +95,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
             // gl.pixelStorei(gl.UNPACK_ALIGNMENT,1);
-
-
 
 
             gl.bindTexture(gl.TEXTURE_2D, null);

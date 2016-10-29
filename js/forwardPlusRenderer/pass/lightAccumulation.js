@@ -6,8 +6,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
 
     FPR.pass.lightAccumulation.init = function () {
         console.log("lightAccumulation pass init");
-
-        // TODO:
     };
     
 

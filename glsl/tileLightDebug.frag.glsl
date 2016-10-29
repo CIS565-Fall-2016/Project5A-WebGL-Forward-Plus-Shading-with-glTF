@@ -40,7 +40,7 @@ void main() {
 
             if (visible)
             {
-                // // debug: num of lights
+                // debug: num of lights
                 numVisibleLights++;
             }
 

@@ -6,8 +6,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
 
     FPR.pass.forward.init = function () {
         console.log("forward pass init");
-
-        // TODO:
     };
 
     FPR.pass.forward.loadShaderProgramCallback = function (prog) {

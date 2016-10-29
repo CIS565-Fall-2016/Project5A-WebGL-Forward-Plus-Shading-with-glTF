@@ -74,8 +74,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
                 p.u_projectionMatrix    = gl.getUniformLocation(prog, 'u_projectionMatrix');
 
                 p.a_position  = gl.getAttribLocation(prog, 'a_position');
-                //p.a_normal    = gl.getAttribLocation(prog, 'a_normal');
-                //p.a_uv        = gl.getAttribLocation(prog, 'a_uv');
 
                 console.log("Shader Loaded: DepthPrepass");
 

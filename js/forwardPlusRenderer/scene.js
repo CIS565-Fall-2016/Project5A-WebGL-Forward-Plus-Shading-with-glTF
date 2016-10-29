@@ -28,7 +28,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
             var vertexBuffer;
             var indicesBuffer;
 
-
             // textures setting
             var textureID = 0;
             var textureInfo;
@@ -55,10 +54,9 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
                 image = glTF.images[textureInfo.source];
 
                 texture = gl.createTexture();
-                // gl.activeTexture(gl.TEXTURE0 + textureID);
                 gl.bindTexture(target, texture);
 
-                // TODO: use handler to store this kind of functions
+                // TODO for TA: use handler to store this kind of functions
                 // {TEXTURE_2D: gl.texImage2D}
                 switch(target) {
                     case 3553: // gl.TEXTURE_2D

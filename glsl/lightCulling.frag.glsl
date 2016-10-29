@@ -76,7 +76,6 @@ void main() {
         // Test if light overlap with this tile (lightCulling)
         
         // calculate the frustum box in view space
-        // credit: http://www.txutxi.com/?p=444
 
         mat4 M = u_projectionMatrix;
         

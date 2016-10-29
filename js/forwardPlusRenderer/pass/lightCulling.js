@@ -36,7 +36,6 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-        //gl.uniform1i(gl.getUniformLocation(program, "u_LightGridtex"),4); 
         gl.bindTexture(gl.TEXTURE_2D, null); 
 
 
@@ -71,9 +70,7 @@ var ForwardPlusRenderer = ForwardPlusRenderer || {};
         p.u_lightPositionTexture = gl.getUniformLocation(prog, 'u_lightPositionTexture');
         p.u_lightColorRadiusTexture = gl.getUniformLocation(prog, 'u_lightColorRadiusTexture');
         p.u_tileLightsTexture = gl.getUniformLocation(prog, 'u_tileLightsTexture');
-        // p.u_tileFrustumPlanesTexture = gl.getUniformLocation(prog, 'u_tileFrustumPlanesTexture');
         p.u_depthTexture = gl.getUniformLocation(prog, 'u_depthTexture');
-
 
         p.a_position  = gl.getAttribLocation(prog, 'a_position');
         p.a_uv        = gl.getAttribLocation(prog, 'a_uv');
