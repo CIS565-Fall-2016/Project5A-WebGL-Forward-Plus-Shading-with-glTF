@@ -87,6 +87,8 @@ optimizations/analysis).
 
 **Optimizations/Analysis:**
 
+* (1pts) write `tileLightDebug.frag.glsl` to get a debug view of light heat map, showing how many lights are there in each tile.
+
 * (1pts) early z termination with depth prepass
   - Depth prepass is already implemented for you. Simply integrate it into your pipeline.
   
