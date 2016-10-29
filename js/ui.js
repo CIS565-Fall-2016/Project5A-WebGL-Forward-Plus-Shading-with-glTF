@@ -7,7 +7,8 @@
 
     var Cfg = function() {
         // TODO: Define config fields and defaults here
-        this.curPipeline = 'forwardPlusPipeline';
+        // this.curPipeline = 'forwardPlusPipeline';
+        this.curPipeline = 'depthDebugPipeline';
         this.lightPositionDebug = true;
         this.enableEffect0 = false;
     };
